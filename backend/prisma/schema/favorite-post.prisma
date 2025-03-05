@@ -1,9 +1,10 @@
-model Otp {
+model FavoritePost {
     id String @id @default(uuid())
-    code Int
-    expired_at String
+
     userId String @unique
-    user User @relation(fields: [userId], references: [id],onDelete: Cascade)
+    user User @relation(fields: [userId], references: [id])
+
+    posts Post[]
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt

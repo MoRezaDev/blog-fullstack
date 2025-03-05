@@ -9,6 +9,9 @@ model User {
     posts Post[]
     likes Like[]
     comments Comment[]
+
+    favorite_posts FavoritePost?
+
 }
 
 enum UserRole {

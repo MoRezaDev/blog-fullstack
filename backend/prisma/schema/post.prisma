@@ -4,8 +4,9 @@ model Post {
     content String
     authorId String
     author User @relation(fields: [authorId], references: [id])
-    images_url String?
+    images_url String[]
     comments Comment[]
-    views Int
+    views Int @default(0)
     likes Like?
+    favorite_posts FavoritePost[]
 }
