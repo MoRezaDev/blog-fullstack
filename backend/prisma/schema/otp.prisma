@@ -1,0 +1,10 @@
+model Otp {
+    id String @id @default(uuid())
+    code Int
+    expired_at String
+    userId String @unique
+    user User @relation(fields: [userId], references: [id])
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}

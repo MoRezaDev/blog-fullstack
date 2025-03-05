@@ -1,0 +1,11 @@
+model Post {
+    id String @id @default(uuid())
+    title String
+    content String
+    authorId String
+    author User @relation(fields: [authorId], references: [id])
+    images_url String?
+    comments Comment[]
+    views Int
+    likes Like?
+}

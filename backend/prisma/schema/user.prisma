@@ -1,0 +1,17 @@
+model User {
+    id String @id @default(uuid())
+    name String?
+    mobile String @unique
+    role UserRole @default(USER)
+    image String?
+    otp Otp?
+
+    posts Post[]
+    likes Like[]
+    comments Comment[]
+}
+
+enum UserRole {
+    ADMIN
+    USER
+}

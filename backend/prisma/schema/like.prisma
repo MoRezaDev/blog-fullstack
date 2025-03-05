@@ -1,0 +1,9 @@
+model Like {
+    id String @id @default(uuid())
+    likes_count Int
+
+    postId String @unique
+    post Post @relation(fields: [postId], references: [id])
+
+    users User[]
+}
