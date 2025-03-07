@@ -11,5 +11,6 @@ export class CreatePostDto {
     content: string;
     
     images_url?: string[];
+    
 
 }

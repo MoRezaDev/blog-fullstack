@@ -6,5 +6,11 @@ model Comment {
     user User @relation(fields: [userId], references: [id])
 
     postId String
-    post Post @relation(fields: [postId], references: [id])
+    post Post @relation(fields: [postId], references: [id],onDelete: Cascade)
+
+    replyId String?
+    replies Comment[] @relation("Reply")
+    parent Comment? @relation("Reply",fields: [replyId],references: [id])
+    
+
 }

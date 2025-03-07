@@ -4,6 +4,7 @@
 /build
 /backend/node_modules
 /admin/node_modules
+/backend/src/public
 
 # Logs
 logs

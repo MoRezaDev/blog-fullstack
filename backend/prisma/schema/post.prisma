@@ -1,6 +1,7 @@
 model Post {
     id String @id @default(uuid())
     title String
+    slug String @unique
     content String
     authorId String
     author User @relation(fields: [authorId], references: [id])
@@ -9,4 +10,9 @@ model Post {
     views Int @default(0)
     likes Like?
     favorite_posts FavoritePost[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([slug])
 }

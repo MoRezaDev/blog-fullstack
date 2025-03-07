@@ -1,9 +1,12 @@
 model Like {
     id String @id @default(uuid())
-    likes_count Int
+    likes_count Int @default(0)
 
     postId String @unique
     post Post @relation(fields: [postId], references: [id])
 
     users User[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }

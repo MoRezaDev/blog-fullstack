@@ -27,6 +27,17 @@ export class UserController {
     return this.userService.findAll();
   }
 
+  //add and update favoritePosts
+  @Post('add-to-favorite')
+  async addPostsToUserFavorite(userId: string, postId: string) {
+    return this.userService.addPostsToUserFavorite(userId, postId);
+  }
+
+  @Post('remove-from-favorite')
+  async removePostsFromUserFavorites(userId: string, postId: string) {
+    return this.userService.addPostsToUserFavorite(userId, postId);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.userService.findOne(id);
